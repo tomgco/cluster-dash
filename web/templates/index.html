@@ -1,0 +1,8 @@
+<b>Hello, World</b>
+{{- range $context, $namespaces := .Context -}}
+<h2>{{$context}}</h2>
+<h3>Namespaces</h3>
+{{- range $namespace, $pod := $context -}}
+<p>{{$namespace}} - Pods: <i>{{len $pod}}</i></b> <a href="https://app.datadoghq.com/dashboard/nwp-ak2-4y9/generic-kubernetes-namespace-timeboard-created-via-terraform?tile_size=m&page=0&is_auto=true&live=true&tpl_var_NAMESPACE={{$namespace}}&tpl_var_POD_NAMESPACE={{$namespace}}">DataDog</a>
+{{- end -}}
+{{- end -}}
